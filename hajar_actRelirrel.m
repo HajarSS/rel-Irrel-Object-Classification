@@ -3,13 +3,13 @@
 
 % ****************** 7 April 2015 *****************************************
 % Action classification using rel/irrel results (with our results)
-% TASK #1: HMM / Bag of Words
+% TASK #1: SVM / Bag of Words
 % Finding the most relevant track per video and doing action classification
 % for all 306 videos 
     
 % STEP 1: Finding the probability of belonging each track to 'irrel'or'rel'
 % -------
-%{
+% {
 % 10-fold crossValidation / SVM 
 
 % Confusion Matrix(without PCA): 12965(85.4647)   2205(14.5353)   
@@ -94,7 +94,7 @@ save('probStimate1_10foldCV_2015April07','probStimate');
 
 % STEP 2: Extract (18)features for pair relevantObjectTrack-person
 % -------
-%{
+% {
 % run vlfeat-0.9.18/toolbox/vl_setup
 % addpath(libsvm-3.12)
 
@@ -285,7 +285,7 @@ save('actionRecog-relIrrel1-2015April07');
 
 % STEP 3: Action Recognition on the features extracted in STEP 2 
 % -------
-%{
+% {
 load('actionRecog-relIrrel1-2015April07');
 
 addpath './HMMall/';
@@ -463,11 +463,11 @@ saveas(gca,'confMat_HMM1-2015April07','epsc')
 
 % ****************** 13 April 2015 ****************************************
 % TASK #3: 
-% Classifier: SVM / Fisher Vector
+% Classifier: HMM / Fisher Vector
 % Finding the most relevant track per video and doing action classification
 % for all 306 videos
 
-% {
+%{
 % STEP 1: Extracting (18)features for each track over frames of a video 
 % .....................................................................
 
